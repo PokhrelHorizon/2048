@@ -1,6 +1,8 @@
 using System;
 using UnityEngine;
 using UnityEngine.Events;
+using TMPro;
+
 public class GameController : MonoBehaviour
 {
     public UnityEvent StartofGame; //invoked at start of game
@@ -21,6 +23,10 @@ public class GameController : MonoBehaviour
 
     [SerializeField] private float overallGameSpeed;
 
+    //stores score to update in this move and sets best value in start of game
+    public int updateScore;
+    [SerializeField] private TMP_Text bestText;
+
     //set tile positions
     void Awake()
     {
@@ -38,5 +44,13 @@ public class GameController : MonoBehaviour
     {
         Time.timeScale = overallGameSpeed;
         StartofGame.Invoke();
+
+        //set best score to 0 in storage if player playing for the first time
+        if(!PlayerPrefs.HasKey("best"))
+        {
+            PlayerPrefs.SetInt("best", 0);
+            PlayerPrefs.Save();
+        }
+        bestText.text = PlayerPrefs.GetInt("best").ToString();
     }
 }

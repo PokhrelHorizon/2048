@@ -1,14 +1,18 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class TileCombiner : MonoBehaviour
 {
     //reference main game script
     [SerializeField] private GameController GCS;
 
+    public UnityEvent UpdateScoreBoard;
+
     //combine tiles to right
     public void CombineRight()
     {
+        GCS.updateScore = 0;
         //loop that selects tiles in order and tries to combine them
         for(int i = 0; i<=3; i++)
         {
@@ -42,6 +46,7 @@ public class TileCombiner : MonoBehaviour
     //combine tiles to left
     public void CombineLeft()
     {
+        GCS.updateScore = 0;
         //loop that selects tiles in order and tries to combine them
         for (int i = 0; i <= 3; i++)
         {
@@ -75,6 +80,7 @@ public class TileCombiner : MonoBehaviour
     //combine tiles to top
     public void CombineTop()
     {
+        GCS.updateScore = 0;
         //loop that selects tiles in order and tries to combine them
         for (int j = 0; j <= 3; j++)
         {
@@ -108,6 +114,7 @@ public class TileCombiner : MonoBehaviour
     //combine tiles to bottom
     public void CombineBottom()
     {
+        GCS.updateScore = 0;
         //loop that selects tiles in order and tries to combine them
         for (int j = 0; j <= 3; j++)
         {
@@ -172,6 +179,10 @@ public class TileCombiner : MonoBehaviour
         //instantiate double value tile in [X0,Y0] store it and its value in respective arrays
         GCS.spawnedTiles[X0, Y0] = Instantiate(GCS.TilePrefabs[newTilePrefabArrayPosition], finalPosition, Quaternion.identity);
         GCS.spawnedTileValues[X0, Y0] = newTileValue;
+
+        //update score by this in this move
+        GCS.updateScore = newTileValue;
+        UpdateScoreBoard.Invoke();
     }
 
 }
