@@ -34,13 +34,13 @@ public class GameInputs : MonoBehaviour
 
             inputTimeRemaining = timeBetweenInputs; //reset input timer
 
-            GameOver(); //check if game over
-
             //do tile combination
             CombineRight.Invoke();
 
             //do tile movement, check if tile moved, then spawn new tile
             MoveRight.Invoke();
+
+            GameOver(); //check if game over
         }
     }
 
@@ -53,14 +53,14 @@ public class GameInputs : MonoBehaviour
             GCS.tileMoved = false;
 
             inputTimeRemaining = timeBetweenInputs; //reset input timer
-            
-            GameOver(); //check if game over
 
             //do tile combination
             CombineLeft.Invoke();
 
             //do tile movement, check if tile moved, then spawn new tile
             MoveLeft.Invoke();
+
+            GameOver(); //check if game over
         }
     }
 
@@ -73,14 +73,14 @@ public class GameInputs : MonoBehaviour
             GCS.tileMoved = false;
 
             inputTimeRemaining = timeBetweenInputs; //reset input timer
-            
-            GameOver(); //check if game over
-
+ 
             //do tile combination
             CombineTop.Invoke();
 
             //do tile movement, check if tile moved, then spawn new tile
             MoveTop.Invoke();
+
+            GameOver(); //check if game over
         }
     }
 
@@ -95,13 +95,13 @@ public class GameInputs : MonoBehaviour
 
             inputTimeRemaining = timeBetweenInputs; //reset input timer
 
-            GameOver(); //check if game over
-
             //do tile combination
             CombineBottom.Invoke();
 
             //do tile movement, check if tile moved, then spawn new tile
             MoveBottom.Invoke();
+
+
         }
     }
 

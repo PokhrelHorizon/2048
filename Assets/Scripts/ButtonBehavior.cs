@@ -12,4 +12,9 @@ public class ButtonBehavior : MonoBehaviour
 
         SceneManager.LoadScene("MainScene");
     }
+
+    public void OnExitButtonClick()
+    {
+        Application.Quit();
+    }
 }
