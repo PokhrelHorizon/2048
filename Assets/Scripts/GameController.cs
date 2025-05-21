@@ -19,6 +19,8 @@ public class GameController : MonoBehaviour
     //Animation time taken by combination/movement to occur
     [field: SerializeField] public float AnimationTime { get; private set; }
 
+    [SerializeField] private float overallGameSpeed;
+
     //set tile positions
     void Awake()
     {
@@ -34,6 +36,7 @@ public class GameController : MonoBehaviour
     
     void Start()
     {
+        Time.timeScale = overallGameSpeed;
         StartofGame.Invoke();
     }
 }

@@ -1061,6 +1061,7 @@ MonoBehaviour:
   - {fileID: 8130960014487529592, guid: e81b7fa2fdddb2e4492f3b9b29c3042f, type: 3}
   - {fileID: 4935744277406750488, guid: a5889518b0c293c4d969edfaaf17808d, type: 3}
   <AnimationTime>k__BackingField: 0.1
+  overallGameSpeed: 1.5
 --- !u!1 &1131855996
 GameObject:
   m_ObjectHideFlags: 0
@@ -2054,6 +2055,54 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 32b4ed50-0ef0-4ebf-b085-e03acb4a383f
     m_ActionName: 'Movement/Right Input[/Keyboard/rightArrow,/Keyboard/d]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1858985702}
+        m_TargetAssemblyTypeName: GameInputs, Assembly-CSharp
+        m_MethodName: OnLeftInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 69520ecf-993f-473a-94b1-f2879a2b31ac
+    m_ActionName: 'Movement/Left Input[/Keyboard/leftArrow,/Keyboard/a]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1858985702}
+        m_TargetAssemblyTypeName: GameInputs, Assembly-CSharp
+        m_MethodName: OnTopInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 6bea30a4-5750-448f-85f0-15876e7b49be
+    m_ActionName: 'Movement/Top  Input[/Keyboard/upArrow,/Keyboard/w]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1858985702}
+        m_TargetAssemblyTypeName: GameInputs, Assembly-CSharp
+        m_MethodName: OnBottomInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 1e90d13e-778b-479d-ab51-7b4581e485a2
+    m_ActionName: 'Movement/Bottom  Input[/Keyboard/downArrow,/Keyboard/s]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard
   m_DefaultActionMap: Movement
@@ -2102,7 +2151,97 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  timeBetweenInputs: 0.6
+  CombineLeft:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1390416484}
+        m_TargetAssemblyTypeName: TileCombiner, Assembly-CSharp
+        m_MethodName: CombineLeft
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  MoveLeft:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 210685931}
+        m_TargetAssemblyTypeName: TileMover, Assembly-CSharp
+        m_MethodName: MoveLeft
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  CombineTop:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1390416484}
+        m_TargetAssemblyTypeName: TileCombiner, Assembly-CSharp
+        m_MethodName: CombineTop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  MoveTop:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 210685931}
+        m_TargetAssemblyTypeName: TileMover, Assembly-CSharp
+        m_MethodName: MoveTop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  CombineBottom:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1390416484}
+        m_TargetAssemblyTypeName: TileCombiner, Assembly-CSharp
+        m_MethodName: CombineBottom
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  MoveBottom:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 210685931}
+        m_TargetAssemblyTypeName: TileMover, Assembly-CSharp
+        m_MethodName: MoveBottom
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  timeBetweenInputs: 0.4
 --- !u!1 &1943580640
 GameObject:
   m_ObjectHideFlags: 0

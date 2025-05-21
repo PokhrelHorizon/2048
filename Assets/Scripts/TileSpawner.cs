@@ -17,7 +17,7 @@ public class TileSpawner : MonoBehaviour
     //spawns one tile after every successful move
     public void SpawnTileEveryMove()
     {
-        Invoke("TileSpawn", GCS.AnimationTime + 0.02f);
+        Invoke("TileSpawn", GCS.AnimationTime);
     }
 
 
