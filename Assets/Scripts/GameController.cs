@@ -21,10 +21,10 @@ public class GameController : MonoBehaviour
     //Animation time taken by combination/movement to occur
     [field: SerializeField] public float AnimationTime { get; private set; }
 
-    [SerializeField] private float overallGameSpeed;
+    [field:SerializeField] public float OverallGameSpeed { get; private set; }
 
     //stores score to update in this move and sets best value in start of game
-    public int updateScore;
+    [NonSerialized]public int updateScore;
     [SerializeField] private TMP_Text bestText;
 
     //set tile positions
@@ -42,7 +42,7 @@ public class GameController : MonoBehaviour
     
     void Start()
     {
-        Time.timeScale = overallGameSpeed;
+        Time.timeScale = OverallGameSpeed;
         StartofGame.Invoke();
 
         //set best score to 0 in storage if player playing for the first time

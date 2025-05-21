@@ -7,11 +7,13 @@ public class GameInputs : MonoBehaviour
     //reference main game script
     [SerializeField] private GameController GCS;
 
+    //reference gameOverUI
+    [SerializeField] private GameObject gameOverUI;
+
     public UnityEvent CombineRight, MoveRight; //events invoked on right input
     public UnityEvent CombineLeft, MoveLeft; //events invoked on left input
     public UnityEvent CombineTop, MoveTop; //events invoked on top input
     public UnityEvent CombineBottom, MoveBottom; //events invoked on bottom input
-
 
     //used to set min time between registering inputs
     [SerializeField] private float timeBetweenInputs;
@@ -32,7 +34,7 @@ public class GameInputs : MonoBehaviour
 
             inputTimeRemaining = timeBetweenInputs; //reset input timer
 
-            //check if game over
+            GameOver(); //check if game over
 
             //do tile combination
             CombineRight.Invoke();
@@ -51,8 +53,8 @@ public class GameInputs : MonoBehaviour
             GCS.tileMoved = false;
 
             inputTimeRemaining = timeBetweenInputs; //reset input timer
-
-            //check if game over
+            
+            GameOver(); //check if game over
 
             //do tile combination
             CombineLeft.Invoke();
@@ -71,8 +73,8 @@ public class GameInputs : MonoBehaviour
             GCS.tileMoved = false;
 
             inputTimeRemaining = timeBetweenInputs; //reset input timer
-
-            //check if game over
+            
+            GameOver(); //check if game over
 
             //do tile combination
             CombineTop.Invoke();
@@ -93,7 +95,7 @@ public class GameInputs : MonoBehaviour
 
             inputTimeRemaining = timeBetweenInputs; //reset input timer
 
-            //check if game over
+            GameOver(); //check if game over
 
             //do tile combination
             CombineBottom.Invoke();
@@ -102,4 +104,56 @@ public class GameInputs : MonoBehaviour
             MoveBottom.Invoke();
         }
     }
+
+
+
+    //check game over
+    private void GameOver()
+    {
+        //determine if game over, true at first because false is being checked
+        bool gameisPotentiallyOver = true;
+
+        //function to check if there is adjacent equivalent tile value(empty=0),if none exist, then game over
+        gameisPotentiallyOver = GameOverCheck();
+
+        if(gameisPotentiallyOver)
+        {
+            gameOverUI.SetActive(true);
+            //freeze game
+            Time.timeScale = 0f;
+        }
+
+    }
+    //checks conditions for game over
+    private bool GameOverCheck()
+    {
+
+        //horizontal check
+        for (int i = 0; i <= 3; i++)
+        {
+            for (int j = 0; j <= 2; j++)
+            {
+                if (GCS.spawnedTileValues[i, j]==0 || GCS.spawnedTileValues[i, j + 1] ==0 || GCS.spawnedTileValues[i, j] == GCS.spawnedTileValues[i, j + 1])
+                {
+                    return false;
+                }
+            }
+        }
+
+        //vertical check
+        for(int k=0; k<=3; k++)
+        {
+            for(int l=0;l<=2;l++)
+            {
+                if (GCS.spawnedTileValues[l, k] == 0 || GCS.spawnedTileValues[l + 1, k] ==0 || GCS.spawnedTileValues[l, k] == GCS.spawnedTileValues[l+1, k])
+                {
+                    return false;
+                }
+            }
+        }
+
+        //if both checks fails
+        return true;
+    }
+
 }
