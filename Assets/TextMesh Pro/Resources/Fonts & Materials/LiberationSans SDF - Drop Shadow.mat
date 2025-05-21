@@ -97,7 +97,7 @@ Material:
     - _UnderlaySoftness: 0.05
     - _VertexOffsetX: 0
     - _VertexOffsetY: 0
-    - _WeightBold: 1.3
+    - _WeightBold: 1
     - _WeightNormal: 0
     m_Colors:
     - _ClipRect: {r: -32767, g: -32767, b: 32767, a: 32767}

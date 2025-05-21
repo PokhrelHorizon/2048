@@ -13,6 +13,14 @@ public class TileSpawner : MonoBehaviour
         TileSpawn();
     }
 
+
+    //spawns one tile after every successful move
+    public void SpawnTileEveryMove()
+    {
+        Invoke("TileSpawn", GCS.AnimationTime + 0.02f);
+    }
+
+
     //used by different tile spawn functions to spawn one tile in random unoccupied position to game
     private void TileSpawn()
     {
@@ -21,7 +29,7 @@ public class TileSpawner : MonoBehaviour
         while(!didTileSpawn)
         {
             //random position in board, random in int is maxexclusive
-            int row = Random.Range(0, 4);
+            int row = Random.Range(0, 4); 
             int column = Random.Range(0, 4);
 
             //90% 2, 10% 4 tile chance when spawning
@@ -32,7 +40,6 @@ public class TileSpawner : MonoBehaviour
                 didTileSpawn = true;
                 GCS.spawnedTiles[row, column] = Instantiate(tileToSpawn, GCS.TilePositions[row, column], Quaternion.identity);
                 GCS.spawnedTileValues[row, column] = int.Parse(GCS.spawnedTiles[row, column].GetComponentInChildren<TMP_Text>().text);
-                Debug.Log(GCS.spawnedTileValues[row, column]);
             }
         
         }

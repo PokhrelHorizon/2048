@@ -13,6 +13,12 @@ public class GameController : MonoBehaviour
     //array to store tile prefabs
     [field: SerializeField] public GameObject[] TilePrefabs { get; private set; } = new GameObject[17];
 
+    //used in combination/movement to check if tile moved/combined then spawn one tile
+    [NonSerialized] public bool tileMoved; 
+
+    //Animation time taken by combination/movement to occur
+    [field: SerializeField] public float AnimationTime { get; private set; }
+
     //set tile positions
     void Awake()
     {

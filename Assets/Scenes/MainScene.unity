@@ -264,6 +264,66 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 10}
   m_SizeDelta: {x: 78, y: 18}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &210685929
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 210685930}
+  - component: {fileID: 210685931}
+  m_Layer: 0
+  m_Name: TileMovement
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &210685930
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 210685929}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2060881923}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &210685931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 210685929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 280245aab7990cc428a56aa4b431d69f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GCS: {fileID: 1018331297}
+  TileSpawnOnInput:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1681573871}
+        m_TargetAssemblyTypeName: TileSpawner, Assembly-CSharp
+        m_MethodName: SpawnTileEveryMove
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &311452463
 GameObject:
   m_ObjectHideFlags: 0
@@ -985,21 +1045,22 @@ MonoBehaviour:
   <TilePrefabs>k__BackingField:
   - {fileID: 2667639894040748039, guid: 48ec82e6b8e98c84c978961a5b06f0bc, type: 3}
   - {fileID: 115550359084375130, guid: 5f0375c3d77085d4490f3929cf982efe, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8826087596643456408, guid: 32b939a593c45e94aac567339e5b3f5d, type: 3}
+  - {fileID: 580902535066913433, guid: 886d71226174919458eaeaaf81ac1b28, type: 3}
+  - {fileID: 2103457412271883234, guid: 318e28a5a5864384fafbc26692f71ea9, type: 3}
+  - {fileID: 3415664971888158224, guid: e0248452dee1c0c4ab32902a0462a415, type: 3}
+  - {fileID: 8343633524705578254, guid: 409793f3440304840897c7b8971ad9c6, type: 3}
+  - {fileID: 3343578124484217393, guid: 803d82cb2d636ce4499db50a4e1e4718, type: 3}
+  - {fileID: 6126275827222025249, guid: d5e717d2a43893b43b8428bb9536829e, type: 3}
+  - {fileID: 551541428887507037, guid: dc976028cd3d0c244a2c4c313fc4508d, type: 3}
+  - {fileID: 1327080788289097937, guid: d094d444a5d6f85479081238446af407, type: 3}
+  - {fileID: 6530087624398243091, guid: f2eff945781868f4a8d9a0d1b0422f05, type: 3}
+  - {fileID: 3573140310662859802, guid: a3b49a5f417659f45b31e57c5d6bbe6e, type: 3}
+  - {fileID: 453612500252311712, guid: 6c1c2cf8c23de664cad0e422724d1daf, type: 3}
+  - {fileID: 7764544603790556770, guid: a305196bb2b276e40b4f9c77a954f12e, type: 3}
+  - {fileID: 8130960014487529592, guid: e81b7fa2fdddb2e4492f3b9b29c3042f, type: 3}
+  - {fileID: 4935744277406750488, guid: a5889518b0c293c4d969edfaaf17808d, type: 3}
+  <AnimationTime>k__BackingField: 0.1
 --- !u!1 &1131855996
 GameObject:
   m_ObjectHideFlags: 0
@@ -1304,6 +1365,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1249663981}
   m_CullTransparentMesh: 1
+--- !u!1 &1390416482
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1390416483}
+  - component: {fileID: 1390416484}
+  m_Layer: 0
+  m_Name: TileCombination
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1390416483
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390416482}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2060881923}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1390416484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390416482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f04f2ec1be15f24cb94dfda14419e93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GCS: {fileID: 1018331297}
 --- !u!1 &1475190379
 GameObject:
   m_ObjectHideFlags: 0
@@ -1874,6 +1980,129 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GCS: {fileID: 1018331297}
+--- !u!1 &1858985699
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1858985700}
+  - component: {fileID: 1858985701}
+  - component: {fileID: 1858985702}
+  m_Layer: 0
+  m_Name: InputManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1858985700
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1858985699}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2060881923}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1858985701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1858985699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 664d61a31357ee04bb41fbbb1b1d5c75, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1858985702}
+        m_TargetAssemblyTypeName: GameInputs, Assembly-CSharp
+        m_MethodName: OnRightInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 32b4ed50-0ef0-4ebf-b085-e03acb4a383f
+    m_ActionName: 'Movement/Right Input[/Keyboard/rightArrow,/Keyboard/d]'
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: Keyboard
+  m_DefaultActionMap: Movement
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!114 &1858985702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1858985699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9379a17cc5bd4e24e9b5f390fb7085d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GCS: {fileID: 1018331297}
+  CombineRight:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1390416484}
+        m_TargetAssemblyTypeName: TileCombiner, Assembly-CSharp
+        m_MethodName: CombineRight
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  MoveRight:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 210685931}
+        m_TargetAssemblyTypeName: TileMover, Assembly-CSharp
+        m_MethodName: MoveRight
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  timeBetweenInputs: 0.6
 --- !u!1 &1943580640
 GameObject:
   m_ObjectHideFlags: 0
@@ -1979,7 +2208,10 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1018331296}
+  - {fileID: 1858985700}
   - {fileID: 1681573870}
+  - {fileID: 1390416483}
+  - {fileID: 210685930}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807

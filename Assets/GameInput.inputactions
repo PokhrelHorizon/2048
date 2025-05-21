@@ -1,0 +1,57 @@
+{
+    "name": "GameInput",
+    "maps": [
+        {
+            "name": "Movement",
+            "id": "317cd0bf-30d2-4d39-a192-641f6ce59871",
+            "actions": [
+                {
+                    "name": "Right Input",
+                    "type": "Button",
+                    "id": "32b4ed50-0ef0-4ebf-b085-e03acb4a383f",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "8ac73b3f-8688-4f8b-ab0a-3f47bb0baabf",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard",
+                    "action": "Right Input",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6a6370ee-6d55-433c-8262-8fbc7ce85ff0",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard",
+                    "action": "Right Input",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "Keyboard",
+            "bindingGroup": "Keyboard",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}
