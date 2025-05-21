@@ -1,4 +1,5 @@
 *.shader linguist-vendored
 *.cginc linguist-vendored
 Assets/TextMesh?Pro/** linguist-vendored
+Assets/WebGLTemplates/** linguist-vendored
 GameBuild/** linguist-vendored
