@@ -40,7 +40,7 @@ public class GameInputs : MonoBehaviour
             //do tile movement, check if tile moved, then spawn new tile
             MoveRight.Invoke();
 
-            GameOver(); //check if game over
+            Invoke(nameof(GameOver), 3*GCS.AnimationTime); //check if game over after everything else completes executing
         }
     }
 
@@ -60,7 +60,7 @@ public class GameInputs : MonoBehaviour
             //do tile movement, check if tile moved, then spawn new tile
             MoveLeft.Invoke();
 
-            GameOver(); //check if game over
+            Invoke(nameof(GameOver), 3 * GCS.AnimationTime); //check if game over after everything else completes executing
         }
     }
 
@@ -80,7 +80,7 @@ public class GameInputs : MonoBehaviour
             //do tile movement, check if tile moved, then spawn new tile
             MoveTop.Invoke();
 
-            GameOver(); //check if game over
+            Invoke(nameof(GameOver), 3 * GCS.AnimationTime); //check if game over after everything else completes executing
         }
     }
 
@@ -101,7 +101,7 @@ public class GameInputs : MonoBehaviour
             //do tile movement, check if tile moved, then spawn new tile
             MoveBottom.Invoke();
 
-
+            Invoke(nameof(GameOver), 3 * GCS.AnimationTime); //check if game over after everything else completes executing
         }
     }
 
